@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* EPXFresh Color System */
+    /* Primary: Fresh Green - 新鲜、自然、健康 */
+    --fresh-primary: 142 76% 36%;          /* HSL: Fresh Green */
+    --fresh-primary-light: 142 76% 46%;     /* Lighter version */
+    --fresh-primary-dark: 142 76% 26%;      /* Darker version */
+    
+    /* Secondary: Eco Teal - 环保、可持续 */
+    --eco-teal: 174 82% 31%;                /* HSL: Eco Teal */
+    --eco-teal-light: 174 82% 41%;          /* Lighter version */
+    
+    /* Accent: Warm Earth - 有机、温暖 */
+    --warm-earth: 35 92% 56%;               /* HSL: Warm Earth */
+    --warm-earth-light: 35 92% 66%;         /* Lighter version */
+    
+    /* Neutrals: Natural, Organic */
+    --neutral-cream: 40 33% 96%;            /* HSL: Cream */
+    --neutral-sand: 40 20% 90%;              /* HSL: Sand */
+    
+    /* Standard Theme Colors */
+    --background: 40 33% 98%;
+    --foreground: 40 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 40 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 40 10% 15%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 40 10% 98%;
+    --secondary: 40 20% 94%;
+    --secondary-foreground: 40 10% 15%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 40 10% 45%;
+    --accent: 35 92% 56%;
+    --accent-foreground: 40 10% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 10% 98%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 142 76% 36%;
+    --radius: 0.75rem;
+    
+    /* Custom Gradients */
+    --gradient-fresh: linear-gradient(135deg, hsl(142 76% 36%), hsl(174 82% 31%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(40 20% 94%) 100%);
+    --gradient-leaf: linear-gradient(135deg, hsl(142 76% 36% / 0.1), hsl(174 82% 31% / 0.05));
+    
+    /* Custom Shadows */
+    --shadow-fresh: 0 10px 40px -10px hsl(142 76% 36% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(40 10% 15% / 0.1);
+    --shadow-card: 0 2px 12px -2px hsl(40 10% 15% / 0.08);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 40 10% 8%;
+    --foreground: 40 20% 96%;
+    --card: 40 10% 12%;
+    --card-foreground: 40 20% 96%;
+    --popover: 40 10% 12%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 142 76% 56%;
+    --primary-foreground: 40 10% 8%;
+    --secondary: 40 10% 18%;
+    --secondary-foreground: 40 20% 96%;
+    --muted: 40 10% 18%;
+    --muted-foreground: 40 20% 65%;
+    --accent: 35 92% 66%;
+    --accent-foreground: 40 10% 8%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 40 10% 20%;
+    --input: 40 10% 20%;
+    --ring: 142 76% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom Selection Color */
+  ::selection {
+    @apply bg-fresh-primary/20 text-fresh-primary-dark;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-gradient-fresh {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-fresh);
+  }
+  
+  .bg-gradient-fresh {
+    background-image: var(--gradient-fresh);
+  }
+  
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+  
+  .bg-gradient-leaf {
+    background-image: var(--gradient-leaf);
+  }
+  
+  .shadow-fresh {
+    box-shadow: var(--shadow-fresh);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
