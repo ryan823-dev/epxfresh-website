@@ -105,29 +105,11 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
-          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
-          "50%": { transform: "translateY(-20px) rotate(2deg)" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { 
-            opacity: "1",
-            boxShadow: "0 0 20px rgba(22, 163, 74, 0.4)"
-          },
-          "50%": { 
-            opacity: "0.8",
-            boxShadow: "0 0 40px rgba(22, 163, 74, 0.6)"
-          },
-        },
-        "gradient-flow": {
-          "0%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-          "100%": { backgroundPosition: "0% 50%" },
-        },
+        // Clean animations - functional only
         "fade-up": {
           "from": { 
             opacity: "0",
-            transform: "translateY(30px)"
+            transform: "translateY(20px)"
           },
           "to": { 
             opacity: "1",
@@ -148,42 +130,19 @@ const config: Config = {
             transform: "scale(1)"
           },
         },
-        "slide-in-right": {
-          "from": { 
-            opacity: "0",
-            transform: "translateX(30px)"
-          },
-          "to": { 
-            opacity: "1",
-            transform: "translateX(0)"
-          },
-        },
         "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
-        },
-        "bounce-soft": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        "spin-slow": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "gradient-flow": "gradient-flow 8s ease infinite",
-        "fade-up": "fade-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-        "scale-in": "scale-in 0.5s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
+        // Clean animations - functional only
+        "fade-up": "fade-up 0.5s ease-out forwards",
+        "fade-in": "fade-in 0.4s ease-out forwards",
+        "scale-in": "scale-in 0.4s ease-out forwards",
         "shimmer": "shimmer 2s infinite",
-        "bounce-soft": "bounce-soft 2s ease-in-out infinite",
-        "spin-slow": "spin-slow 20s linear infinite",
       },
     },
   },
